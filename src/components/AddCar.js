@@ -34,7 +34,7 @@ function AddCar(props){
 
     return(
         <div>
-            <button onClick = {handleClickOpen} id="AddCar">Add New Car</button>
+            <button onClick = {handleClickOpen} id="AddCar">New Car</button>
             <Dialog open = {open} onClose={handleClose}>
                 <DialogTitle>New Car</DialogTitle>
                 <DialogContent>

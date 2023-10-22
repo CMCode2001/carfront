@@ -1,5 +1,3 @@
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material";
 import React, { useState } from "react";
 import "./icone.css";
@@ -43,12 +41,7 @@ function EditCar(props){
 
     return(
         <div>
-            <FontAwesomeIcon 
-                size="2x" 
-                icon={faEdit} 
-                style={{ cursor: 'pointer' }} 
-                onClick = {handleClickOpen}
-            />
+            <button onClick = {handleClickOpen}>Edit</button>
             <Dialog open = {open} onClose={handleClose}>
                 <DialogTitle>Edit Car</DialogTitle>
                 <DialogContent>

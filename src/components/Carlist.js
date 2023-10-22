@@ -1,5 +1,3 @@
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Snackbar } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import React, { useEffect, useState } from 'react';
@@ -33,14 +31,7 @@ function Carlist() {
             sortable : false,
             filterable : false,
             renderCell: row => (
-               // <button onClick={() => onDelClick(row.id)}> Delete</button>
-                <FontAwesomeIcon
-                    icon={faTrash}
-                    onClick={() => onDelClick(row.id)}
-                    style={{ cursor: 'pointer' }}
-                    size='2x'
-                    color='red'
-                />
+                <button onClick={() => onDelClick(row.id)}> Delete</button>
             )
         }
 
