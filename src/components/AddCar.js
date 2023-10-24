@@ -1,13 +1,20 @@
 import { Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material";
+import Button from "@mui/material/Button";
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
 import { useState } from "react";
+import sportcar from './img/sportcar.png';
+
+
 
 
 function AddCar(props){
     const initialCar = {
+       
         brand : "",
         model : "",
         color : "",
-        year : "",
+        year :  "",
         price : "",
     }
 
@@ -32,56 +39,70 @@ function AddCar(props){
     }
 
 
+
     return(
         <div>
-            <button onClick = {handleClickOpen} id="AddCar">New Car</button>
+            <Button onClick = {handleClickOpen} id="AddCar"> 
+                
+                <img src={sportcar} width="40" height="40"/>
+            </Button>
             <Dialog open = {open} onClose={handleClose}>
-                <DialogTitle>New Car</DialogTitle>
+                <DialogTitle>
+                <img src={sportcar} width="25" height="25"/>
+
+                </DialogTitle>
                 <DialogContent>
-                    <input 
-                        placeholder="Brand"
-                        name="brand"
-                        value={car.brand}
-                        onChange={handleChange}
-                    />
-                    <br/>
+                    <Stack spacing={1} mt={1}>
+                    
+                        <TextField
+                            label="Brand"
+                            name="brand"
+                            autoFocus
+                            value={car.brand}
+                            onChange={handleChange}>
+                        </TextField>
+                        <TextField
+                            label="Model"
+                            name="model"
+                            autoFocus
+                            value={car.model}
+                            onChange={handleChange}>
+                        </TextField>
+                        <TextField
+                            label="Couleur"
+                            type="color"
+                            name="Color"
+                            autoFocus
+                            value={car.color}
+                            onChange={handleChange}>
+                        </TextField>
 
-                    <input 
-                        placeholder="Model"
-                        name="model"
-                        value={car.model}
-                        onChange={handleChange}
-                    />
-                    <br/>
+                        <TextField
+                            label="Year"
+                            type="number"
+                            name="year"
+                            autoFocus
+                            value={car.year}
+                            onChange={handleChange}>
+                        </TextField>
+                            <TextField
+                            label="Price"
+                            type="number"
+                            name="price"
+                            autoFocus
+                            value={car.price}
+                            onChange={handleChange}>
+                        </TextField>
+                       
 
-                    <input 
-                        placeholder="Color"
-                        name="color"
-                        value={car.color}
-                        onChange={handleChange}
-                    />
-                    <br/>
 
-                    <input 
-                        placeholder="Year"
-                        name="year"
-                        value={car.year}
-                        onChange={handleChange}
-                    />
-                    <br/>
 
-                    <input 
-                        placeholder="Price"
-                        name="price"
-                        value={car.price}
-                        onChange={handleChange}
-                    />
-                    <br/>
+                    </Stack>
                 </DialogContent>
 
                 <DialogActions>
-                    <button onClick={handleClose}>Close</button>
-                    <button onClick={handleSave}>Save</button>
+                    <Button onClick={handleClose}>Close</Button>
+                    <Button onClick={handleSave}>Save</Button>
                     
                 </DialogActions>
             </Dialog>
